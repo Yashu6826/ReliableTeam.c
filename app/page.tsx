@@ -167,7 +167,7 @@ export default function ReliableTeamLanding() {
             </div>
           </div>
           <div className="text-center mt-12">
-            <p className="text-2xl font-semibold text-emerald-600">
+            <p className="text-2xl font-semibold text-gray-500">
               The truth: You don't need more resumes. You need project-ready AI builders — already vetted for your stack and use-case.
             </p>
           </div>
@@ -236,7 +236,7 @@ export default function ReliableTeamLanding() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {roles.map((roleCluster, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-2xl p-6 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
-                <h3 className="text-xl font-semibold mb-4 text-emerald-600">{roleCluster.category}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">{roleCluster.category}</h3>
                 <div className="space-y-2">
                   {roleCluster.roles.map((role, roleIndex) => (
                     <div key={roleIndex} className="flex items-center text-gray-600 group-hover:text-gray-900 transition-colors">
