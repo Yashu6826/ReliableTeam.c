@@ -1,6 +1,22 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Clock, Shield, Zap, Users, Target, CheckCircle, Star, ArrowRight, Menu, X } from 'lucide-react';
+import { ChevronRight, Clock, Shield, Users, Target, CheckCircle, Star, ArrowRight, Menu, X , Terminal,
+  Cpu,
+  Mic,
+  FileText,
+  Database,
+  GitBranch,
+  Box,
+  Zap,
+  Cloud,
+  Code,
+  RefreshCw,
+  Package,
+  Server,
+  Layers,
+  Scroll,} from 'lucide-react';
+
+import { motion, useAnimation } from "framer-motion";
 
 export default function ReliableTeamLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +51,119 @@ export default function ReliableTeamLanding() {
       roles: ["2x QA", "Prompt Debugger", "Eval Architect"],
       icon: "🧪"
     }
-  };
+  };const skillItems = [
+  {
+    name: "Python",
+    sub: ["numpy", "pandas", "scikit-learn", "torch", "tensorflow", "matplotlib", "requests"],
+    Icon:  Terminal,
+  },
+  {
+    name: "JavaScript",
+    sub: ["ES6+", "async/await"],
+    Icon:  Code,
+  },
+  {
+    name: "React",
+    sub: ["hooks", "SSR", "components"],
+    Icon: Box,
+  },
+  {
+    name: "Next.js",
+    sub: ["App Router", "Edge", "ISR"],
+    Icon: RefreshCw,
+  },
+  {
+    name: "FastAPI",
+    sub: ["async", "OpenAPI"],
+    Icon:  Server,
+  },
+  {
+    name: "Node.js",
+    sub: ["runtime", "npm"],
+    Icon:GitBranch,
+  },
+  {
+    name: "Docker",
+    sub: ["containers", "images"],
+    Icon:Layers,
+  },
+  {
+    name: "MySQL",
+    sub: ["relational", "queries"],
+    Icon:  Database,
+  },
+  {
+    name: "MongoDB",
+    sub: ["NoSQL", "document"],
+    Icon:  Database,
+  },
+  {
+    name: "Streamlit",
+    sub: ["apps", "data UI"],
+    Icon:Scroll,
+  },
+  {
+    name: "LangChain",
+    sub: ["chains", "agents"],
+    Icon:  GitBranch,
+  },
+  {
+    name: "LangGraph",
+    sub: ["graph", "context"],
+    Icon:  GitBranch,
+  },
+  {
+    name: "Llama 3.2",
+    sub: ["open weights", "local inference"],
+    Icon:  Box,
+  },
+  {
+    name: "Anthropic",
+    sub: ["Claude", "safety"],
+    Icon:  Zap,
+  },
+  {
+    name: "Mistral AI",
+    sub: ["lightweight", "high-perf"],
+    Icon: Zap,
+  },
+  {
+    name: "OpenAI",
+    sub: ["GPT-4", "GPT-3.5"],
+    Icon:  Zap,
+  },
+  {
+    name: "Gemini",
+    sub: ["Pro", "Ultra"],
+    Icon:  Cloud,
+  },
+  {
+    name: "Qwen",
+    sub: ["large model"],
+    Icon:  Cloud,
+  },
+  {
+    name: "Claude",
+    sub: ["assistant"],
+    Icon:  Zap,
+  },
+  {
+    name: "Deepseek",
+    sub: ["search", "retrieval"],
+    Icon: Cloud,
+  },
+  {
+    name: "Google Cloud",
+    sub: ["GCP", "services"],
+    Icon: Cloud,
+  },
+  {
+    name: "AWS",
+    sub: ["compute", "serverless"],
+    Icon:  Cloud,
+  },
+];
+
 
   const roles = [
     { category: "Prompting & Prompt Logic", roles: ["Prompt Engineer", "Instruction Tuner", "Prompt Debugger"] },
@@ -52,6 +180,33 @@ export default function ReliableTeamLanding() {
     { number: "5-7", label: "Days to deploy vetted GenAI talent" }
   ];
 
+const MarqueeItem: React.FC<{ name: string; sub: string[]; Icon: any }> = ({ name, sub, Icon }) => {
+  return (
+    <div className="flex flex-col items-center justify-center px-5 py-3 m-2  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; rounded-2xl  min-w-[140px] border ">
+      <div className="flex items-center gap-1">
+        <Icon className="w-5 h-5 text-emerald-400" />
+        <div className="font-semibold text-xs text-black whitespace-nowrap">{name}</div>
+      </div>
+      {/* <div className="text-[9px] text-gray-400 mt-1 flex flex-wrap gap-1 justify-center">
+        {sub.map((s) => (
+          <span key={s} className="px-2 py-0.5  rounded-full text-gray-400">{s}</span>
+        ))}
+      </div> */}
+    </div>
+  );
+};
+
+const controls = useAnimation();
+  const repeated = [...skillItems, ...skillItems];
+
+  useEffect(() => {
+    controls.start({
+      x: [0, -window.innerWidth],
+      transition: { repeat: Infinity, ease: "linear", duration: 20 },
+    });
+  }, [controls]);
+
+
   return (
     <div className="min-h-screen bg-slate-50 text-gray-900 overflow-hidden">
       {/* Background Animation */}
@@ -61,7 +216,7 @@ export default function ReliableTeamLanding() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 100 ? 'bg-slate-50/90 backdrop-blur-lg border-b border-gray-200' : ''}`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-black bg-clip-text text-transparent">
+            <div className="text-2xl font-bold text-black bg-clip-text ">
               ReliableTeam.ai
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -94,34 +249,35 @@ export default function ReliableTeamLanding() {
       )}
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
+      <section className="relative pt-32 pb-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-gray-100/50 border border-gray-200 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center bg-gray-100/50 border border-gray-200 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
               <Zap className="w-4 h-4 mr-2 text-emerald-600" />
               <span className="text-sm text-emerald-400">Deployed in 5-7 Days</span>
-            </div>
+            </div> */}
             <h1 className="text-5xl md:text-7xl font-bold mb-6  bg-clip-text text-transparent leading-tight">
-              Vetted GenAI Talent.
+              {/* Vetted GenAI Talent. */}
               <br />
-              <span className="text-4xl md:text-6xl text-gray-800">Vetted GenAI talent</span>
+              <span className="text-4xl md:text-6xl text-gray-800">Your Embedded AI Talent Partner — For Teams Shipping LLMs to Production</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              The trusted staffing layer for AI-native teams. From prompt engineers to RAG developers to LLM QA pods — we deliver SME-vetted, project-ready specialists on contract.
+              From prompt engineers and retrieval devs to eval experts and AI product managers — we plug in SME-vetted talent aligned to your stack and ready to ship. No recruiters. No resume roulette. Just people who know what “prod-ready” means.
+
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="px-8 py-4 rounded-full bg-gradient-to-r from-emerald-700/80 to-emerald-500/50 text-lg font-semibold hover:shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105 flex items-center group">
-                Schedule a Call
+                contact us
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border border-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all">
+              {/* <button className="border border-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all">
                 talent@reliableteam.ai
-              </button>
+              </button> */}
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="bg-white border border-gray-200 rounded-2xl p-8 backdrop-blur-sm hover:bg-gray-100/70 transition-all duration-300 group-hover:border-emerald-500/50">
@@ -130,18 +286,18 @@ export default function ReliableTeamLanding() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 px-6 bg-gray-100/30">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-5 px-5 bg-gray-100/30">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
               Hiring Bottleneck is Killing
               <span className="text-emerald-600"> GenAI Momentum</span>
-            </h2>
+            </h3>
             <div className="text-2xl text-emerald-600 mb-8 font-semibold">
               ⚠ "We don't have the team for this right now."
             </div>
@@ -150,27 +306,27 @@ export default function ReliableTeamLanding() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-8 backdrop-blur-sm">
+            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-4 backdrop-blur-sm">
               <Clock className="w-12 h-12 text-emerald-600 mb-4" />
               <h3 className="text-xl font-semibold mb-4">Time Wasted</h3>
               <p className="text-gray-600">Senior teams spend 3–5 weeks chasing prompt engineers, RAG devs, or hallucination testers while product deadlines slip.</p>
             </div>
-            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-8 backdrop-blur-sm">
+            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-4 backdrop-blur-sm">
               <Target className="w-12 h-12 text-emerald-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-4">Wrong Talent</h3>
-              <p className="text-gray-600">Traditional recruiters can't evaluate AI workflows. Freelance marketplaces flood you with irrelevant profiles.</p>
+              <h3 className="text-xl font-semibold mb-4">Fast-Changing Tech</h3>
+              <p className="text-gray-600"> The GenAI stack evolves weekly. Roles like "RAG latency optimizer" or "embedding evaluator" didn’t exist in 2023 — and teams haven’t caught up.</p>
             </div>
-            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-8 backdrop-blur-sm">
+            <div className="bg-gray-100/50 border border-emerald-500/30 rounded-2xl p-4 backdrop-blur-sm">
               <Users className="w-12 h-12 text-emerald-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-4">Team Burnout</h3>
-              <p className="text-gray-600">Internal teams are burned out interviewing while confidence erodes and momentum dies.</p>
+              <h3 className="text-xl font-semibold mb-4">Scarce, Young Talent</h3>
+              <p className="text-gray-600"> The talent pool is thin — and thinner still when you need engineers who’ve actually worked with LLMs in production.</p>
             </div>
           </div>
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <p className="text-2xl font-semibold text-gray-500">
               The truth: You don't need more resumes. You need project-ready AI builders — already vetted for your stack and use-case.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -179,38 +335,42 @@ export default function ReliableTeamLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              We Don't "Staff" AI Roles.
+              {/* We Don't "Staff" AI Roles. */}
               <br />
               <span className="text-emerald-600">We Enable GenAI Delivery.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-6 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6 text-white" />
+            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl  p-3 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
+              <div className="flex flex-row  gap-4">
+                <Zap className="w-6 h-6 text-emerald-600" />
+                 <h3 className="text-xl font-semibold mb-3">Specialized Talent</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Specialized Talent</h3>
+             
               <p className="text-gray-600">Only GenAI-native roles (no full-stack devs, no IT generalists)</p>
             </div>
-            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-6 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Target className="w-6 h-6 text-white" />
+            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-3 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
+              <div className="flex flex-row  gap-4">
+                <Target className="w-6 h-6 text-emerald-600" />
+                 <h3 className="text-xl font-semibold mb-3">Outcome-First Vetting</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Outcome-First Vetting</h3>
+             
               <p className="text-gray-600">Talent vetted for role → stack → task → job outcome</p>
             </div>
-            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-6 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Users className="w-6 h-6 text-white" />
+            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-3 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
+              <div className="flex flex-row  gap-4">
+                <Users className="w-6 h-6 text-emerald-600" />
+                <h3 className="text-xl font-semibold mb-3">Pods, Not Just People</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Pods, Not Just People</h3>
+              
               <p className="text-gray-600">Pre-scoped pods for MVPs, eval cycles, or production builds</p>
             </div>
-            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-6 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
-              <div className="w-12 h-12  rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Shield className="w-6 h-6 text-white" />
+            <div className="bg-gray-100/50 border border-gray-200 rounded-2xl p-3 backdrop-blur-sm hover:border-emerald-500/50 transition-all group">
+              <div className="flex flex-row  gap-4">
+                <Shield className="w-6 h-6 text-emerald-600" />
+                 <h3 className="text-xl font-semibold mb-3">Speed with Safety</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Speed with Safety</h3>
+             
               <p className="text-gray-600">Vetted profiles in 5–7 business days, NDA/IP compliant, optional trial week</p>
             </div>
           </div>
@@ -222,14 +382,16 @@ export default function ReliableTeamLanding() {
         </div>
       </section>
 
+    
+
       {/* Roles Section */}
-      <section id="roles" className="py-20 px-6 bg-gray-100/30">
+      <section id="roles" className=" px-6 bg-gray-100/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Sample Role Clusters
+              {/* Sample Role Clusters */}
               <br />
-              <span className="text-emerald-600">We Specialize In</span>
+              <span className="">We Specialize In</span>
             </h2>
             <p className="text-xl text-gray-600">Not just titles. Each role is designed around specific job-to-be-done outcomes.</p>
           </div>
@@ -253,11 +415,34 @@ export default function ReliableTeamLanding() {
               All roles are mapped to <span className="text-emerald-600 font-semibold">skill-task-tool combinations</span> — not resume keywords.
             </p>
           </div>
+          
         </div>
+           <div className="relative overflow-hidden w-full  mt-5 select-none">
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparentto-transparent" />
+      <div className="flex h-45 bg-white items-center">
+        <motion.div
+          className="flex gap-4"
+          animate={controls}
+          onHoverStart={() => controls.stop()}
+          onHoverEnd={() => {
+            controls.start({
+              x: [0, -window.innerWidth],
+              transition: { repeat: Infinity, ease: "linear", duration: 20 },
+            });
+          }}
+          style={{ willChange: "transform" }}
+        >
+          {repeated.map((item, idx) => (
+            <MarqueeItem key={idx + item.name} name={item.name} sub={item.sub} Icon={item.Icon} />
+          ))}
+        </motion.div>
+      </div>
+      {/* <div className="absolute bottom-1 right-2 text-[10px] text-gray-400">Hover to pause</div> */}
+    </div>
       </section>
 
       {/* Pods Section */}
-      <section id="pods" className="py-20 px-6">
+      <section id="pods" className="py-5 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -325,33 +510,63 @@ export default function ReliableTeamLanding() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className=" px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
-                Schedule a Call
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+               Contact us 
+                {/* <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" /> */}
               </button>
               <button className="border border-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all">
-                talent@reliableteam.ai
+                talent@reliableteam.club
               </button>
             </div>
           </div>
-          <div className="text-gray-600">
+          {/* <div className="text-gray-600">
             <p>Visit <span className="text-emerald-600">reliableteam.ai</span></p>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-50 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bold  bg-clip-text text-transparent mb-4 md:mb-0">
-              ReliableTeam.ai
-            </div>
-            <div className="text-gray-600">
-              © 2025 ReliableTeam.ai. The trusted staffing layer for AI-native teams.
-            </div>
-          </div>
+     {/* Footer */}
+<footer className="py-12 px-6 bg-slate-50 border-t border-gray-200">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Logo/Company Name */}
+      <div>
+        <div className="text-2xl font-bold text-gray-900 mb-4">
+          ReliableTeam.ai
         </div>
-      </footer>
+        <p className="text-gray-600 text-sm">
+          The trusted staffing layer for AI-native teams.
+        </p>
+      </div>
+
+      {/* Links - Optional Middle Column */}
+      <div className="flex flex-col space-y-2">
+        <a href="#how-it-works" className="text-gray-600 hover:text-emerald-600 transition-colors">How It Works</a>
+        <a href="#roles" className="text-gray-600 hover:text-emerald-600 transition-colors">Roles</a>
+        <a href="#pods" className="text-gray-600 hover:text-emerald-600 transition-colors">Pods</a>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h3 className="font-semibold text-gray-900 mb-4">Contact</h3>
+        <div className="space-y-2 text-gray-600">
+          <p>169 Madison Avenue,</p>
+          <p>STE 11133,</p>
+          <p>New York, NY 10016, USA</p>
+          <p>Phone: +1 (857) 654-2544</p>
+          <p>Email: info@omicsbank.com</p>
+          <p>Hours: 9AM-6PM EST</p>
+          <p>Monday - Friday</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600 text-sm">
+      © 2025 ReliableTeam.ai. All rights reserved.
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
