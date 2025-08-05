@@ -266,7 +266,7 @@ const controls = useAnimation();
               <br />
               <span className="text-4xl md:text-6xl text-gray-800">Your Embedded AI Talent Partner — For Teams Shipping LLMs to Production</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className=" text-xl text-gray-600 mb-8  mx-auto leading-relaxed">
               From prompt engineers and retrieval devs to eval experts and AI product managers — we plug in SME-vetted talent aligned to your stack and ready to ship. No recruiters. No resume roulette. Just people who know what “prod-ready” means.
 
             </p>
