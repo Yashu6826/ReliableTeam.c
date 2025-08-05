@@ -162,8 +162,9 @@ export default function ReliableTeamLanding() {
       {/* Hero Section */}
       <section className="pt-40 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Your Partner for Embedded AI Talent
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Your Partner for Embedded AI Talent — For Teams Shipping LLMs to Production
+
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             We deliver vetted GenAI specialists—prompt engineers, retrieval experts, and eval architects—ready to ship production-ready solutions tailored to your stack.
