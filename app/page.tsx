@@ -207,9 +207,9 @@ export default function ReliableTeamLanding() {
 
 const MarqueeItem: React.FC<{ name: string; sub: string[]; Icon: any }> = ({ name, sub, Icon }) => {
   return (
-    <div className="flex flex-col items-center justify-center px-5 py-3 m-2  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; rounded-2xl  min-w-[140px] border ">
-      <div className="flex items-center gap-1">
-       <Image src={Icon} alt={name} className="w-6 h-6" />
+    <div className="flex flex-col items-center justify-center px-5 h-[200px] py-3 m-2  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; rounded-2xl  min-w-[200px]  border ">
+      <div className="flex flex-col items-center gap-1">
+       <Image src={Icon} alt={name} className="w-20 h-20" />
         <div className="font-semibold text-xs text-black whitespace-nowrap">{name}</div>
       </div>
       {/* <div className="text-[9px] text-gray-400 mt-1 flex flex-wrap gap-1 justify-center">
@@ -278,7 +278,7 @@ const controls = useAnimation();
       )}
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-10 px-6">
+      <section className="relative pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             {/* <div className="inline-flex items-center bg-gray-100/50 border border-gray-200 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
@@ -288,7 +288,7 @@ const controls = useAnimation();
             <h1 className="text-5xl md:text-7xl font-bold mb-6  bg-clip-text text-transparent leading-tight">
               {/* Vetted GenAI Talent. */}
               <br />
-              <span className="text-4xl md:text-6xl text-gray-800">Your Embedded AI Talent Partner — For Teams Shipping LLMs to Production</span>
+              <span className="text-3xl md:text-4xl text-gray-800">Your Embedded AI Talent Partner — For Teams Shipping LLMs to Production</span>
             </h1>
             <p className=" text-xl text-gray-600 mb-8  mx-auto leading-relaxed">
               From prompt engineers and retrieval devs to eval experts and AI product managers — we plug in SME-vetted talent aligned to your stack and ready to ship. No recruiters. No resume roulette. Just people who know what “prod-ready” means.
@@ -320,7 +320,7 @@ const controls = useAnimation();
       </section>
 
       {/* Problem Section */}
-      <section className="py-5 px-5 bg-gray-100/30">
+      <section className="py-15 px-8 bg-gray-100/30">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -361,7 +361,7 @@ const controls = useAnimation();
 
       {/* How It Works */}
       <section id="how-it-works" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto pb-5">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {/* We Don't "Staff" AI Roles. */}
@@ -414,7 +414,7 @@ const controls = useAnimation();
     
 
       {/* Roles Section */}
-      <section id="roles" className=" px-6 bg-gray-100/30">
+      <section id="roles" className=" px-6 py-10 bg-gray-100/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -448,9 +448,9 @@ const controls = useAnimation();
         </div>
            <div className="relative overflow-hidden w-full  mt-5 select-none">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparentto-transparent" />
-      <div className="flex h-45 bg-white items-center">
+      <div className="flex h-60 bg-white items-center">
         <motion.div
-          className="flex gap-4"
+          className="flex gap-4 "
           animate={controls}
           onHoverStart={() => controls.stop()}
           onHoverEnd={() => {
@@ -471,7 +471,7 @@ const controls = useAnimation();
       </section>
 
       {/* Pods Section */}
-      <section id="pods" className="py-5 px-6">
+      <section id="pods" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -522,7 +522,7 @@ const controls = useAnimation();
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-10 px-6 ">
+      <section id="contact" className="py-15 px-10 mb-10 ">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Unblock Your
@@ -532,7 +532,7 @@ const controls = useAnimation();
           <p className="text-xl text-gray-600 mb-8">
             The right engineer in 5 days is worth more than 50 resumes in your inbox.
           </p>
-          <div className="bg-gray-100/50 border border-gray-200 rounded-3xl p-4 backdrop-blur-sm ">
+          <div className="bg-gray-100/50 border border-gray-200 rounded-3xl p-4 backdrop-blur-sm py-8 ">
             <h3 className="text-2xl font-bold mb-4 text-emerald-600">👋 Want to test us?</h3>
             <p className="text-lg text-gray-600 mb-6">
               Share your hardest AI role today — and we'll show you 2 vetted profiles by Friday.
