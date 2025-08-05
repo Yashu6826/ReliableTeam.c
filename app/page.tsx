@@ -15,6 +15,7 @@ import { ChevronRight, Clock, Shield, Users, Target, CheckCircle, Star, ArrowRig
   Server,
   Layers,
   Scroll,} from 'lucide-react';
+  import LOGO from './Logo2.png'
 
 import { motion, useAnimation } from "framer-motion";
 
@@ -216,8 +217,12 @@ const controls = useAnimation();
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 100 ? 'bg-slate-50/90 backdrop-blur-lg border-b border-gray-200' : ''}`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
+            <div className='flex items-center gap-3'>
+               <img src={LOGO.src} alt="Logo" className="w-10 h-10" />
             <div className="text-2xl font-bold text-black bg-clip-text ">
               ReliableTeam.ai
+            </div>
+           
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#how-it-works" className="hover:text-emerald-600 transition-colors">How It Works</a>
@@ -493,7 +498,7 @@ const controls = useAnimation();
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 px-6 ">
+      <section id="contact" className="py-10 px-6 ">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Unblock Your
@@ -503,7 +508,7 @@ const controls = useAnimation();
           <p className="text-xl text-gray-600 mb-8">
             The right engineer in 5 days is worth more than 50 resumes in your inbox.
           </p>
-          <div className="bg-gray-100/50 border border-gray-200 rounded-3xl p-8 backdrop-blur-sm mb-8">
+          <div className="bg-gray-100/50 border border-gray-200 rounded-3xl p-4 backdrop-blur-sm ">
             <h3 className="text-2xl font-bold mb-4 text-emerald-600">👋 Want to test us?</h3>
             <p className="text-lg text-gray-600 mb-6">
               Share your hardest AI role today — and we'll show you 2 vetted profiles by Friday.
@@ -526,7 +531,7 @@ const controls = useAnimation();
 
       {/* Footer */}
      {/* Footer */}
-<footer className="py-12 px-6 bg-slate-50 border-t border-gray-200">
+<footer className="py-3 px-2 bg-slate-50 border-t border-gray-200">
   <div className="max-w-6xl mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Logo/Company Name */}
@@ -554,16 +559,15 @@ const controls = useAnimation();
           <p>STE 11133,</p>
           <p>New York, NY 10016, USA</p>
           <p>Phone: +1 (857) 654-2544</p>
-          <p>Email: info@omicsbank.com</p>
-          <p>Hours: 9AM-6PM EST</p>
-          <p>Monday - Friday</p>
+          <p>Email: ReliableTeam.club</p>
+          
         </div>
       </div>
     </div>
 
     {/* Copyright */}
-    <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600 text-sm">
-      © 2025 ReliableTeam.ai. All rights reserved.
+    <div className="border-t border-gray-200 pt-3 text-center text-gray-600 text-sm">
+      © 2025 ReliableTeam.club All rights reserved.
     </div>
   </div>
 </footer>
