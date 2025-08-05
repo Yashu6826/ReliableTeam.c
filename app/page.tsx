@@ -15,7 +15,31 @@ import { ChevronRight, Clock, Shield, Users, Target, CheckCircle, Star, ArrowRig
   Server,
   Layers,
   Scroll,} from 'lucide-react';
-  import LOGO from './Logo2.png'
+  import LOGO from './Assets/Logo2.png'
+  import anthropic from './Assets/anthropic.png';
+  import docker from './Assets/docker.png';
+  import fastapi from './Assets/fastapi.png';
+  import langchain from './Assets/langchain.png';
+  import mysql from './Assets/mysql.png';
+  import Nextjs from './Assets/Nextjs.png';
+  import Nodejs from './Assets/Nodejs.png';
+  import ReactLogo from './Assets/React.png';
+  import streamlit from './Assets/streamlit.png';
+  import javascript from './Assets/javascript.png';
+  import mongodb from './Assets/mongodb.png';
+  import aws from './Assets/aws.png';
+  import claude from './Assets/claude.png';
+  import deepseek from './Assets/deepseek.png';
+  import gemini from './Assets/gemini.png';
+  import googlecloud from './Assets/googlecloud.png';
+  import llama from './Assets/llama.png';
+  import mistral from './Assets/mistralai.png';
+  import openai from './Assets/openai.png';
+  import Qwen from './Assets/Qwen.png';
+  import langgraph from './Assets/langgraph.png';
+
+  import Image from 'next/image';
+
 
 import { motion, useAnimation } from "framer-motion";
 
@@ -61,107 +85,107 @@ export default function ReliableTeamLanding() {
   {
     name: "JavaScript",
     sub: ["ES6+", "async/await"],
-    Icon:  Code,
+    Icon: javascript ,
   },
   {
     name: "React",
     sub: ["hooks", "SSR", "components"],
-    Icon: Box,
+    Icon: ReactLogo,
   },
   {
     name: "Next.js",
     sub: ["App Router", "Edge", "ISR"],
-    Icon: RefreshCw,
+    Icon: Nextjs,
   },
   {
     name: "FastAPI",
     sub: ["async", "OpenAPI"],
-    Icon:  Server,
+    Icon:  fastapi,
   },
   {
     name: "Node.js",
     sub: ["runtime", "npm"],
-    Icon:GitBranch,
+    Icon:Nodejs,
   },
   {
     name: "Docker",
     sub: ["containers", "images"],
-    Icon:Layers,
+    Icon:docker,
   },
   {
     name: "MySQL",
     sub: ["relational", "queries"],
-    Icon:  Database,
+    Icon:  mysql,
   },
   {
     name: "MongoDB",
     sub: ["NoSQL", "document"],
-    Icon:  Database,
+    Icon: mongodb,
   },
   {
     name: "Streamlit",
     sub: ["apps", "data UI"],
-    Icon:Scroll,
+    Icon:streamlit,
   },
   {
     name: "LangChain",
     sub: ["chains", "agents"],
-    Icon:  GitBranch,
+    Icon:  langchain,
   },
   {
     name: "LangGraph",
     sub: ["graph", "context"],
-    Icon:  GitBranch,
+    Icon:  langgraph,
   },
   {
     name: "Llama 3.2",
     sub: ["open weights", "local inference"],
-    Icon:  Box,
+    Icon:  llama,
   },
   {
     name: "Anthropic",
     sub: ["Claude", "safety"],
-    Icon:  Zap,
+    Icon:  anthropic,
   },
   {
     name: "Mistral AI",
     sub: ["lightweight", "high-perf"],
-    Icon: Zap,
+    Icon: mistral,
   },
   {
     name: "OpenAI",
     sub: ["GPT-4", "GPT-3.5"],
-    Icon:  Zap,
+    Icon:  openai,
   },
   {
     name: "Gemini",
     sub: ["Pro", "Ultra"],
-    Icon:  Cloud,
+    Icon:  gemini,
   },
   {
     name: "Qwen",
     sub: ["large model"],
-    Icon:  Cloud,
+    Icon:  Qwen,
   },
   {
     name: "Claude",
     sub: ["assistant"],
-    Icon:  Zap,
+    Icon:  claude,
   },
   {
     name: "Deepseek",
     sub: ["search", "retrieval"],
-    Icon: Cloud,
+    Icon: deepseek,
   },
   {
     name: "Google Cloud",
     sub: ["GCP", "services"],
-    Icon: Cloud,
+    Icon: googlecloud,
   },
   {
     name: "AWS",
     sub: ["compute", "serverless"],
-    Icon:  Cloud,
+    Icon:  aws,
   },
 ];
 
@@ -185,7 +209,7 @@ const MarqueeItem: React.FC<{ name: string; sub: string[]; Icon: any }> = ({ nam
   return (
     <div className="flex flex-col items-center justify-center px-5 py-3 m-2  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; rounded-2xl  min-w-[140px] border ">
       <div className="flex items-center gap-1">
-        <Icon className="w-5 h-5 text-emerald-400" />
+       <Image src={Icon} alt={name} className="w-6 h-6" />
         <div className="font-semibold text-xs text-black whitespace-nowrap">{name}</div>
       </div>
       {/* <div className="text-[9px] text-gray-400 mt-1 flex flex-wrap gap-1 justify-center">
